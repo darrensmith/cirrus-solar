@@ -1,0 +1,37 @@
+    <script type="text/javascript">
+      window.paceOptions = {
+        document: true,
+        eventLag: true,
+        restartOnPushState: true,
+        restartOnRequestAfter: true,
+        ajax: {
+          trackMethods: [ 'POST','GET']
+        }
+      };
+    </script>
+
+    <!-- build:js({.tmp,app}) /resources/app/scripts/app.min.js -->
+    <script src="/resources/app/vendor/jquery/dist/jquery.js"></script>
+    <script src="/resources/app/vendor/pace/pace.js"></script>
+    <script src="/resources/app/vendor/tether/dist/js/tether.js"></script>
+    <script src="/resources/app/vendor/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/resources/app/vendor/fastclick/lib/fastclick.js"></script>
+    <script src="/resources/app/scripts/constants.js"></script>
+    <script src="/resources/app/scripts/main.js"></script>
+    <!-- endbuild -->
+
+    <!-- page scripts -->
+    <script src="/resources/app/vendor/flot/jquery.flot.js"></script>
+    <script src="/resources/app/vendor/flot/jquery.flot.resize.js"></script>
+    <script src="/resources/app/vendor/flot/jquery.flot.stack.js"></script>
+    <script src="/resources/app/vendor/flot-spline/js/jquery.flot.spline.js"></script>
+    <script src="/resources/app/vendor/bower-jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="/resources/app/data/maps/jquery-jvectormap-us-aea.js"></script>
+    <script src="/resources/app/vendor/jquery.easy-pie-chart/dist/jquery.easypiechart.js"></script>
+    <script src="/resources/app/vendor/noty/js/noty/packaged/jquery.noty.packaged.min.js"></script>
+    <script src="/resources/app/scripts/helpers/noty-defaults.js"></script>
+    <!-- end page scripts -->
+
+    <!-- initialize page scripts -->
+    <script src="/resources/app/scripts/dashboard/dashboard.js"></script>
+    <!-- end initialize page scripts -->

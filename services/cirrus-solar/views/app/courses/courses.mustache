@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    {{> app/meta}}
+    <title>Courses | Learnalogy</title>
+    {{> app/stylesheets}}
+
+  </head>
+  <body>
+
+    <div class="app">
+
+      {{> app/sidebar}}
+
+      <!-- content panel -->
+      <div class="main-panel">
+        <!-- top header -->
+        <nav class="header navbar">
+          <div class="header-inner">
+            {{> app/logo}}
+            <a class="navbar-item navbar-spacer-right navbar-heading hidden-md-down" href="#">
+              <span>Dashboard</span>
+            </a>
+            <div class="navbar-search navbar-item">
+              <form class="search-form">
+                <i class="material-icons">search</i>
+                <input class="form-control" type="text" placeholder="Search" />
+              </form>
+            </div>
+            <div class="navbar-item nav navbar-nav">
+              {{> app/language-dropdown}}
+              {{> app/notifications-dropdown}}
+              <a href="javascript:;" class="nav-item nav-link nav-link-icon" data-toggle="modal" data-target=".chat-panel" data-backdrop="false">
+                <i class="material-icons">chat_bubble</i>
+              </a>
+            </div>
+          </div>
+        </nav>
+        <!-- /top header -->
+
+        <!-- main area -->
+        <div class="main-content">
+          <div class="content-view">
+            <div class="card">
+              <div class="card-block">
+                <div class="m-b-1">
+                  <h6>Courses</h6>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          {{> app/footer}}
+        </div>
+        <!-- /main area -->
+      </div>
+      <!-- /content panel -->
+
+      <!--Chat panel-->
+      {{> app/chat-panel}}
+      {{> app/chat-message}}
+      <!--/Chat panel-->
+
+    </div>
+
+    {{> app/javascript}}
+    
+  </body>
+</html>

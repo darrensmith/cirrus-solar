@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    {{> app/meta}}
+    <title>Admin - User Management | Learnalogy</title>
+    {{> app/stylesheets}}
+
+  </head>
+  <body>
+
+    <div class="app">
+
+      {{> app/sidebar}}
+
+      <!-- content panel -->
+      <div class="main-panel">
+        <!-- top header -->
+        <nav class="header navbar">
+          <div class="header-inner">
+            {{> app/logo}}
+            <a class="navbar-item navbar-spacer-right navbar-heading hidden-md-down" href="#">
+              <span>Dashboard</span>
+            </a>
+            <div class="navbar-search navbar-item">
+              <form class="search-form">
+                <i class="material-icons">search</i>
+                <input class="form-control" type="text" placeholder="Search" />
+              </form>
+            </div>
+            <div class="navbar-item nav navbar-nav">
+              {{> app/language-dropdown}}
+              {{> app/notifications-dropdown}}
+              <a href="javascript:;" class="nav-item nav-link nav-link-icon" data-toggle="modal" data-target=".chat-panel" data-backdrop="false">
+                <i class="material-icons">chat_bubble</i>
+              </a>
+            </div>
+          </div>
+        </nav>
+        <!-- /top header -->
+
+        <!-- main area -->
+        <div class="main-content">
+          <div class="content-view">
+            <div class="card">
+              <div class="card-block">
+                <div class="m-b-1">
+                  <h6>User Management</h6>
+                </div>
+               <button class="btn btn-default m-r-xs m-b-xs" onclick="window.location.href='/app/admin/users/create'">
+                  Create User
+                </button>
+                <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper form-inline dt-bootstrap4 no-footer">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="dataTables_length" id="DataTables_Table_0_length">
+                        <label>Show 
+                          <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" class="form-control input-sm">
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                          </select> entries
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div id="DataTables_Table_0_filter" class="dataTables_filter">
+                        <label>Search:
+                          <input type="search" class="form-control input-sm" placeholder="" aria-controls="DataTables_Table_0">
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <table class="table table-bordered datatable dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
+                        <thead>
+                          <tr role="row">
+                            <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 138px;">Email Address</th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 171px;">First Name</th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 143px;">Last Name</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {{#users}}
+                          <tr class="odd">
+                            <td valign="top" class="dataTables_empty"><a href="/app/admin/users/{{id}}">{{email}}</a></td>
+                            <td valign="top" class="dataTables_empty">{{firstName}}</td>
+                            <td valign="top" class="dataTables_empty">{{lastName}}</td>
+                          </tr>
+                          {{/users}}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {{> app/footer}}
+        </div>
+        <!-- /main area -->
+      </div>
+      <!-- /content panel -->
+
+      <!--Chat panel-->
+      {{> app/chat-panel}}
+      {{> app/chat-message}}
+      <!--/Chat panel-->
+
+    </div>
+
+    {{> app/javascript}}
+    
+  </body>
+</html>

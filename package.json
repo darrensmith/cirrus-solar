@@ -1,0 +1,62 @@
+{
+  "name": "cirrus-solar",
+  "version": "0.1.0",
+  "description": "Cirrus Solar Demo Project",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js start console",
+    "test": "nyc mocha **/*.br-test.js",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "is-blackrock": "^0.3.0",
+    "pg": "^8.5.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-uuid": "^1.0.6",
+    "eslint": "^7.10.0",
+    "eslint-config-google": "^0.14.0",
+    "mocha": "^8.1.3",
+    "nyc": "^15.1.0",
+    "sinon": "^9.0.3"
+  },
+  "bin": {
+    "cirrus": "index.js"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "google"
+    ],
+    "env": {
+      "node": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 6
+    },
+    "rules": {
+      "max-len": [
+        2,
+        120,
+        4,
+        {
+          "ignoreUrls": true
+        }
+      ],
+      "no-console": 0
+    }
+  },
+  "eslintIgnore": [
+    "node_modules"
+  ],
+  "nyc": {
+    "include": [
+      "services/**/*.js"
+    ],
+    "excludeNodeModules": false
+  }
+}

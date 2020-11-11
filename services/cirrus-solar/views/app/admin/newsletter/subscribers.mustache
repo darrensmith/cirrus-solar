@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    {{> app/meta}}
+    <title>Newsletter Management | Learnalogy</title>
+    {{> app/stylesheets}}
+
+  </head>
+  <body>
+
+    <div class="app">
+
+      {{> app/sidebar}}
+
+      <!-- content panel -->
+      <div class="main-panel">
+        <!-- top header -->
+        <nav class="header navbar">
+          <div class="header-inner">
+            {{> app/logo}}
+            <a class="navbar-item navbar-spacer-right navbar-heading hidden-md-down" href="#">
+              <span>Dashboard</span>
+            </a>
+            <div class="navbar-search navbar-item">
+              <form class="search-form">
+                <i class="material-icons">search</i>
+                <input class="form-control" type="text" placeholder="Search" />
+              </form>
+            </div>
+            <div class="navbar-item nav navbar-nav">
+              {{> app/language-dropdown}}
+              {{> app/notifications-dropdown}}
+              <a href="javascript:;" class="nav-item nav-link nav-link-icon" data-toggle="modal" data-target=".chat-panel" data-backdrop="false">
+                <i class="material-icons">chat_bubble</i>
+              </a>
+            </div>
+          </div>
+        </nav>
+        <!-- /top header -->
+
+        <!-- main area -->
+        <div class="main-content">
+          <div class="content-view">
+            <div class="card">
+              <div class="card-block">
+                <div class="m-b-1">
+                  <h6>Newsletters</h6>
+                </div>
+                <button class="btn btn-default m-r-xs m-b-xs">
+                  Create Subscriber
+                </button>
+                <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper form-inline dt-bootstrap4 no-footer">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="dataTables_length" id="DataTables_Table_0_length">
+                        <label>Show 
+                          <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" class="form-control input-sm">
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                          </select> entries
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div id="DataTables_Table_0_filter" class="dataTables_filter">
+                        <label>Search:
+                          <input type="search" class="form-control input-sm" placeholder="" aria-controls="DataTables_Table_0">
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <table class="table table-bordered datatable dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
+                        <thead>
+                          <tr role="row">
+                            <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 138px;">Email Address</th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 171px;">Subscribed</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {{#subscribers}}
+                          <tr class="odd">
+                            <td valign="top" class="dataTables_empty"><a href="/app/admin/newsletter/subscribers/{{id}}">{{email}}</a></td>
+                            <td valign="top" class="dataTables_empty">{{isActive}}</td>
+                          </tr>
+                          {{/subscribers}}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5">
+                    <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 0 to 0 of 0 entries</div>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+                      <ul class="pagination">
+                        <li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous">
+                          <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
+                        </li>
+                        <li class="paginate_button page-item next disabled" id="DataTables_Table_0_next">
+                          <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">Next</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          {{> app/footer}}
+        </div>
+        <!-- /main area -->
+      </div>
+      <!-- /content panel -->
+
+      <!--Chat panel-->
+      {{> app/chat-panel}}
+      {{> app/chat-message}}
+      <!--/Chat panel-->
+
+    </div>
+
+    {{> app/javascript}}
+    
+  </body>
+</html>
