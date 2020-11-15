@@ -1,5 +1,5 @@
 /*!
-* controllers/app/courses/arts/controller.js
+* controllers/sensor/controller.js
 *
 * Copyright (c) 2020 Darren Smith
 * Licensed under the LGPL license.
@@ -15,12 +15,15 @@
 	 * @param {object} res - Response object
 	 */
 	ctrl.get = function(req, res){
-		res.render("app/courses/arts.mustache", {});
+		var service = core.module("services").service("cirrus-solar");
+		if(!req.query.q) { req.query.q = 0; }
+		service.vars.set("voltage", req.query.q);
+		res.send({"result": "success"});
+		return;
 	}
 
 	/**
 	 * (ENTRY POINT FOR EXECUTION)
 	 */
 	module.exports = ctrl;
-	
 }();

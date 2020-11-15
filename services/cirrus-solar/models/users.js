@@ -15,7 +15,7 @@
 	 */
 	model.init = function(coreObj){
 		core = coreObj;
-		service = core.module("services").service("learnalogy");
+		service = core.module("services").service("cirrus-solar");
 		db = service.vars.get("db");
 		return model;
 	}
