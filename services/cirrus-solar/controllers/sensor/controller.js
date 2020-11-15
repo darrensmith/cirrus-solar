@@ -15,7 +15,7 @@
 	 * @param {object} res - Response object
 	 */
 	ctrl.get = function(req, res){
-		var service = core.module("services").service("cirrus-solar");
+		var service = req.core.module("services").service("cirrus-solar");
 		if(!req.query.q) { req.query.q = 0; }
 		service.vars.set("voltage", req.query.q);
 		res.send({"result": "success"});

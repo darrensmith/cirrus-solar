@@ -17,7 +17,7 @@
 	ctrl.get = function(req, res){
 		req.auth.web([], function() {
 			var context = {};
-			var service = core.module("services").service("cirrus-solar");
+			var service = req.core.module("services").service("cirrus-solar");
 			context.voltage = service.vars.get("voltage");
 			res.render("app/admin/admin.mustache", context);
 		});
