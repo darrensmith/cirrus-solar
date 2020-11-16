@@ -9,7 +9,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "is-blackrock": "^0.3.1",
+    "is-blackrock": "^0.3.2",
     "pg": "^8.5.0"
   },
   "devDependencies": {

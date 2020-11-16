@@ -2,7 +2,7 @@
 
 
   "core": {
-    "banner": "Learnalogy",
+    "banner": "Cirrus Solar",
     "maxObjectListeners": 100,
     "modules": ["cli", "core", "daemon", ".errorhandler", ".farm", ".identity", 
                 "jobs", "logger", "router", ".sandbox", "services", ".universe", "utilities"],
@@ -49,7 +49,7 @@
       }
     },
     "heartbeat": {
-      "console": true,
+      "console": false,
       "heartbeatFreq": 10000,
       "cacheFreq": 10000
     }
