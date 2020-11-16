@@ -15,7 +15,12 @@
 	 * @param {object} res - Response object
 	 */
 	ctrl.get = function(req, res){
-		res.render("app/dashboard.mustache", {});
+		req.auth.web([], function() {
+			var context = {};
+			var service = req.core.module("services").service("cirrus-solar");
+			context.voltage = service.vars.get("voltage");
+			res.render("app/dashboard.mustache", context);
+		});
 	}
 
 	/**

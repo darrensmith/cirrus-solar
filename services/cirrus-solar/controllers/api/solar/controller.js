@@ -36,12 +36,9 @@
 	 * @param {object} res - Response object
 	 */
 	ctrl.get = function(req, res){
-		req.auth.web([], function() {
-			var context = {};
-			var service = req.core.module("services").service("cirrus-solar");
-			context.voltage = service.vars.get("voltage");
-			res.render("app/admin/admin.mustache", context);
-		});
+		var service = req.core.module("services").service("cirrus-solar");
+		var voltage = service.vars.get("voltage");
+		res.send({"voltage": voltage});
 	}
 
 	/**
