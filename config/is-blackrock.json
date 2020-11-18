@@ -2,7 +2,7 @@
 
 
   "core": {
-    "banner": "Cirrus Solar",
+    "banner": "Cirrus Solar.",
     "maxObjectListeners": 100,
     "modules": ["cli", "core", "daemon", ".errorhandler", ".farm", ".identity", 
                 "jobs", "logger", "router", ".sandbox", "services", ".universe", "utilities"],
