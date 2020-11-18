@@ -11,7 +11,7 @@
 
 	/* Initialise Blackrock */
 	var serviceName = "cirrus-solar";
-	require('is-blackrock').init({"return": "promise"}).then(function(core){
+	require('is-blackrock').init().then(function(core){
 
 
 
@@ -37,8 +37,7 @@
 
 
 		/* Load Data Models */
-		service.models.add("newsletterSubscribers", require(libPath + "/models/newsletterSubscribers.js")(core));
-		service.models.add("users", require(libPath + "/models/users.js")(core));
+		service.models.add("opportunities", require(libPath + "/models/opportunities.js")(core));
 
 
 		/* Load Libraries */

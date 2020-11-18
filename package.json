@@ -1,6 +1,6 @@
 {
   "name": "cirrus-solar",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Cirrus Solar Demo Project",
   "main": "server.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "is-blackrock": "^0.3.3",
+    "is-blackrock": "^0.3.5",
     "pg": "^8.5.0"
   },
   "devDependencies": {
