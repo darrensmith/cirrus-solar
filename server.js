@@ -49,7 +49,6 @@
 		/* Setup Authorization Middleware */
 		service.use(function(req, res, next) {
 			req.log = log;
-			req.identity = service.vars.get("identity");
 			if(req.headers.authorization) {
 				var authHeader = req.headers.authorization;
 				authHeader = authHeader.split(" ");
