@@ -14,15 +14,11 @@
 	require('is-blackrock').init().then(function(core){
 
 
-
 		/* Function to Connect to the Database */
 		var dbConnect = function ServerDBConnect(){
 			const { Client } = require('pg');
 			const client = new Client({
-			  connectionString: process.env.DATABASE_URL,
-			  ssl: {
-			    rejectUnauthorized: false
-			  }
+			  connectionString: process.env.DATABASE_URL
 			});
 			client.connect();
 			service.vars.set("db", client);
@@ -37,7 +33,7 @@
 
 
 		/* Load Data Models */
-		service.models.add("opportunities", require(libPath + "/models/opportunities.js")(core));
+		var result = service.models.add("opportunities", require(libPath + "/models/opportunities.js")(core));
 
 
 		/* Load Libraries */
@@ -71,9 +67,7 @@
 				else { res.send({error: "Not Authorised"}); }
 			};
 			next();
-			//});
 		});
-
 
 
 	}).catch(function(err) {

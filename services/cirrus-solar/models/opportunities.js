@@ -42,7 +42,7 @@
 		  			success: false,
 		  			code: "GOT_OPPORTUNITIES",
 		  			message: "Got opportunities successfully",
-		  			results: res.rows;
+		  			results: res.rows
 		  		});
 		  		return;
 			}
