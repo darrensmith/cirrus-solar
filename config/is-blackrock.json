@@ -33,7 +33,7 @@
   "logger": {
     "enabled": true,
     "levels": ["startup", "shutdown", "warning", "error", "fatal"],
-    "logMetadataObjects": false,
+    "logMetadataObjects": true,
     "sinks": {
       "console": {
         "enabled": true
