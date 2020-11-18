@@ -18,7 +18,7 @@
 		var context = {};
 		var httpClient = core.module("http", "interface").client;
 		var service = core.module("services").service("cirrus-solar");
-		/*setInterval(function(){
+		setInterval(function(){
 			httpClient.get("http://solar.home.darrensmith.com.au", function(httpErr, httpRes) {
 				if(httpRes) {
 					log("debug", "Cirrus Solar Application > Polled Solar Panel and Got Voltage of " + (httpRes.data.voltage / 100));
@@ -27,7 +27,7 @@
 					log("debug", "Cirrus Solar Application > Error Polling Solar Panel", httpErr);
 				}
 			});
-		}, 1000);*/
+		}, 1000);
 	}
 
 	/**
