@@ -27,7 +27,7 @@
 	 */
 	model.list = function(inputObject, cb){
 		db.query(
-		  "SELECT * FROM salesforce.opportunities", [],
+		  "SELECT * FROM salesforce.opportunity", [],
 		  function(err, res) {
 		  	if(err) {
 		  		cb({
